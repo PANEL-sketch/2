@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  panel:
+    image: your-panel-image:latest
+    container_name: panel_container
+    ports:
+      - "8080:80"  # Adjust port mapping as needed
+    environment:
+      - ENV_VAR_NAME=value  # Set any required environment variables
+    volumes:
+      - panel_data:/data  # Map volumes for persistent storage
+    restart: unless-stopped
+
+volumes:
+  panel_data:
